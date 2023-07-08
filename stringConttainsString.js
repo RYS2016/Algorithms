@@ -25,6 +25,8 @@ string s: a string
 
 string: YES or NO */
 
+/*--------------------------------------------Approach--1----------------------*/
+
 function hackerrankInString(s) {
     // Write your code here
       const hackerrank = {
@@ -54,4 +56,50 @@ function hackerrankInString(s) {
   }
 
   return "YES";
+}
+
+/*--------------------------------------------Approach--2----------------------*/
+function hackerrankInString(s) {
+    const STRING_MATCH = "hackerrank";
+    let matchIdx = 0;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === STRING_MATCH[matchIdx]) 
+            matchIdx +=1;
+    }
+    return matchIdx === STRING_MATCH.length ? "YES" :"NO";
+}
+
+/*--------------------------------------------Approach--3----------------------*/
+
+function hackerrankInString(s) {
+    return /.*h.*a.*c.*k.*e.*r.*r.*a.*n.*k/g.test(s)? 'YES' : 'NO'
+}
+
+/*--------------------------------------------Approach--4----------------------*/
+
+function hackerrankInString(s) {
+    // Write your code here
+
+    let words = "hackerrank";
+    let wordPos = 0;
+
+    for(let i =0; i < s.length; i++) {
+            if(s[i] === words[wordPos]) {
+                    wordPos++
+            }
+}
+
+return wordPos === 10 ? 'YES' : 'NO'
+}
+
+/*----------------------------------------------Approach--5----------------------*/
+let a='hackerrank';
+    for(let i=0;i<a.length;i++){
+        let b=s.indexOf(a[i]);
+        if(b==-1){
+            return 'NO';
+        }
+        s=s.slice(b+1);
+    }
+    return 'YES';
 }
