@@ -93,6 +93,7 @@ return wordPos === 10 ? 'YES' : 'NO'
 }
 
 /*----------------------------------------------Approach--5----------------------*/
+function hackerrankInString(s) {
 let a='hackerrank';
     for(let i=0;i<a.length;i++){
         let b=s.indexOf(a[i]);
